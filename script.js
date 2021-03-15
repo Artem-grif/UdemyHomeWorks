@@ -1,74 +1,46 @@
 'use strict';
 
-// let num = 50;
+let num = 20;
 
-// while (num <= 55) {
-//     console.log(num);
-//     num++;
+function showFirstMessage(text) {
+    console.log(text);
+    num = 10;
+}
+
+showFirstMessage('Hello World!');
+console.log(num);
+
+// function calc(a, b) {
+//     return (a + b);
 // }
 
+// console.log(calc(4, 3));
+// console.log(calc(10, 2));
 
-// do {
-//     console.log(num);
-//     num++;
-// }
-// while (num <= 55);
-
-// for (let i = 1; i < 10; i++) {
-//     if (i === 6) {
-//         // break;
-//         continue;
-//     }
-
-//     console.log(i);
-
-// }
+function ret() {
+    let num = 50;
 
 
+    //
 
 
-const numberOfFilms = +prompt('Сколько фильмов Вы уже посмотрели?', '');
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
 
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-
+const logger = function() {
+    console.log('Hello!');
 };
 
-
-// const a = prompt('Один из последних просмотренных фильмов?', ''),
-//       b = prompt('На сколько оцените его?', ''),
-//       c = prompt('Один из последних просмотренных фильмов?', ''),
-//       d = prompt('На сколько оцените его?', '');
+logger();
 
 
-for (let i = 0; i <= 1; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-          b = prompt('На сколько оцените его?', '');
+const calc = (a, b) => {
+    console.log('1');
+    return a + b;  
+};
 
-    if (a == null || a.length > 50 || a == '' || b == null || b.length > 50 || b == '') {
-        console.log('Error!');
-        i--;
-    } else {
-        personalMovieDB.movies[a] = b;
-        console.log('done');
-    }
-
-}
-
-if (numberOfFilms < 10 && numberOfFilms > 0) {
-    alert('Просмотрено довольно мало фильмов');
-} else if (numberOfFilms >= 10 && numberOfFilms <= 30){
-    alert('Вы классический зритель');
-} else if (numberOfFilms > 30) {
-    alert('Вы киноман');
-} else {
-    alert('Произошла ошибка');
-}
-
-
-console.log(personalMovieDB);
+console.log(calc(23, 324));
