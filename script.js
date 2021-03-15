@@ -1,46 +1,31 @@
 'use strict';
 
-let num = 20;
+//Lesson 17. Методы и свойства строк и чисел
 
-function showFirstMessage(text) {
-    console.log(text);
-    num = 10;
-}
-
-showFirstMessage('Hello World!');
-console.log(num);
-
-// function calc(a, b) {
-//     return (a + b);
-// }
-
-// console.log(calc(4, 3));
-// console.log(calc(10, 2));
-
-function ret() {
-    let num = 50;
+const str = 'teSt';
 
 
-    //
+// console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
+
+const fruit = 'some fruit';
+
+console.log(fruit.indexOf('q'));
 
 
-    return num;
-}
+const logg = 'Hello world!';
 
-const anotherNum = ret();
-console.log(anotherNum);
+// console.log(logg.slice(6, 12));
 
+// console.log(logg.substring(12, 6));
 
-const logger = function() {
-    console.log('Hello!');
-};
-
-logger();
+console.log(logg.substr(6, 6));
 
 
-const calc = (a, b) => {
-    console.log('1');
-    return a + b;  
-};
+const num = 12.2;
+console.log(Math.round(num));
 
-console.log(calc(23, 324));
+const test = '12.2px';
+// console.log(parseInt(test));
+console.log(parseFloat(test));
