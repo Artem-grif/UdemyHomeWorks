@@ -1,6 +1,6 @@
 'use strict';
 
-//Lesson 18. Callback - функции
+//Lesson 19. Callback - функции
 
 function first() {
     //Do something
