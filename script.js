@@ -1,28 +1,39 @@
 'use strict';
 
-//Lesson 19. Callback - функции
+//Lesson 21. Массивы и псевдомассивы
 
-function first() {
-    //Do something
-    setTimeout(function() {
-        console.log(1);
-    }, 500);
+
+const arr = [2, 3, 10, 18, 1];
+arr.sort(compareNum);
+
+function compareNum(a, b) {
+    return a - b;
 }
 
-function second() {
-    console.log(2);
-}
+// arr[99] = 0;
+// console.log(arr.length);
+console.log(arr);
 
-first();
-second();
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
 
-function learnJS(lang, callback) {
-    console.log(`Я учу: ${lang}`);
-    callback();
-}
 
-function done () {
-    console.log("Я прошел этот урок!");
-}
+// arr.pop();
+// arr.push(10);
 
-learnJS('JavaScript', done);
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort();
+// console.log(products.join('; '));
+
