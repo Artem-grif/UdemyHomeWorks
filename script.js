@@ -1,39 +1,104 @@
 'use strict';
 
-//Lesson 21. Массивы и псевдомассивы
+//Lesson 22. Передача по ссылке или по значению, Spread оператор (ES6-ES9)
 
+// let a = 5,
+//     b = a;
 
-const arr = [2, 3, 10, 18, 1];
-arr.sort(compareNum);
+// b = b + 5;
 
-function compareNum(a, b) {
-    return a - b;
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj;
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+
+    }
+
+    return objCopy;
 }
 
-// arr[99] = 0;
-// console.log(arr.length);
-console.log(arr);
 
-// arr.forEach(function(item, i, arr) {
-//     console.log(`${i}: ${item} внутри массива ${arr}`);
-// });
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
 
 
-// arr.pop();
-// arr.push(10);
+const add = {
+    d: 17,
+    e: 20
+};
 
-// console.log(arr);
+const clone = Object.assign({}, add);
 
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
+clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+// newArray[1] = 'asdasdad';
+// console.log(newArray);
+// console.log(oldArray);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
 // }
 
-// for (let value of arr) {
-//     console.log(value);
-// }
+// const num = [2, 5, 7];
 
-// const str = prompt('', '');
-// const products = str.split(', ');
-// products.sort();
-// console.log(products.join('; '));
+// log(...num);
+
+const array = ['a', 'b'];
+
+const newAarray = [...array];
+
+
+const q = {
+    one: 1,
+    two: 2
+};
+
+const newObj = {...q};
+
+console.log(newObj);
 
