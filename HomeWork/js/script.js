@@ -58,3 +58,4 @@ movieDB.movies.sort();
             <div class="delete"></div>
         </li>`;
  });
+ 
