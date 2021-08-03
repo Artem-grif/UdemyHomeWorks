@@ -15,14 +15,15 @@ P.S. Здесь есть несколько вариантов решения з
 
 5) Фильмы должны быть отсортированы по алфавиту */
 
+
 'use strict';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const adv = document.querySelectorAll('.promo__adv img'),
         bg = document.querySelector('.promo__bg'),
         genre = bg.querySelector('.promo__genre'),
-        // interactive = document.querySelectorAll('.promo__interactive-item'),
         interactive = document.querySelector('.promo__interactive-list'),
         addForm = document.querySelector('form.add'),
         addInput = addForm.querySelector('.adding__input'),
@@ -74,10 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const makeChanges = () => {
         genre.textContent = 'драма';
 
-        // bg.style.cssText = 'background: url(img/bg.jpg) center center/cover no-repeat';
-    
         bg.style.backgroundImage = 'url("img/bg.jpg")';
-    
+
     };
 
 
@@ -86,10 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // for (let i = 0; i < movieDB.movies.length; i++) {
-    //     interactive[i].textContent = `${i + 1 + '.' + ' '}` + movieDB.movies[i];
-    // }
-    
 
     function createMovieList(films, parent) {
         parent.innerHTML = '';
@@ -100,16 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <li class="promo__interactive-item">${i + 1 + '.'} ${film}
                     <div class="delete"></div>
                 </li>`;
-         });
+        });
 
-         document.querySelectorAll('.delete').forEach((btn, i) => {
+        document.querySelectorAll('.delete').forEach((btn, i) => {
             btn.addEventListener('click', () => {
                 btn.parentElement.remove();
                 movieDB.movies.splice(i, 1);
 
                 createMovieList(films, parent);
             });
-         });
+        });
 
     }
 
