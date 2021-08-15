@@ -1,6 +1,6 @@
 'use strict';
 
-'Async, defer, динамические скрипты';
+'35. Async, defer, динамические скрипты';
 
 const p = document.querySelectorAll('p');
 console.log(p);
